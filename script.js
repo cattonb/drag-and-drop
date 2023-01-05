@@ -12,6 +12,20 @@ draggables.forEach(draggable => {
     })
 })
 
+window.onload = function() {
+
+    draggables.forEach(draggable => {
+        draggable.addEventListener("touchmove", () => {
+            draggable.classList.add("dragging");
+        })
+    
+        draggable.addEventListener("touchend", () => {
+            draggable.classList.remove("dragging");
+        })
+    })
+    
+  }
+
 containers.forEach(container => {
     container.addEventListener("dragover", e => {
         e.preventDefault()
